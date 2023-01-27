@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="q" translatable="false">47dp</dimen>
+    <dimen name="ql" translatable="false">33dp</dimen>
+
+</resources>

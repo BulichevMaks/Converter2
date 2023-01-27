@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Converter2</string>
+    <string name="dinara" translatable="false">Динары</string>
+    <string name="rubli" translatable="false">Рубли</string>
+    <string name="lira" translatable="false">Лиры</string>
+    <string name="usd">USD</string>
+</resources>
