@@ -4,4 +4,5 @@
     <string name="rubli" translatable="false">Рубли</string>
     <string name="lira" translatable="false">Лиры</string>
     <string name="usd">USD</string>
+    <string name="eur">EUR</string>
 </resources>
