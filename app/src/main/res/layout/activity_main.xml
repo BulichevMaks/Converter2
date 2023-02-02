@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
             android:textSize="16sp"
-            android:text="@string/rubli"
+            android:text="@string/ruble"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:backgroundTint="#2196F3" />

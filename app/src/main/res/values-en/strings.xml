@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Converter2</string>
     <string name="dinara">Dinars</string>
-    <string name="rubli">Rubles</string>
+    <string name="ruble">Rubles</string>
     <string name="lira">Lira</string>
     <string name="usd">USD</string>
+    <string name="eur">EUR</string>
 </resources>
