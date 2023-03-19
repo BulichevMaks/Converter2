@@ -1,6 +1,8 @@
 package com.myproject.converter2.presentation
 
+import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,11 +14,13 @@ import android.widget.TextView
 import android.widget.Toast
 import com.myproject.converter2.R
 import com.myproject.converter2.data.repository.CurrencyRepositoryImpl
+import com.myproject.converter2.domian.models.Rates
 import com.myproject.converter2.domian.usecase.EnterAmountUseCase
 import com.myproject.converter2.domian.usecase.SelectCurrencyUseCase
 
 class MainActivity : AppCompatActivity() {
-    private val currencyRepository = CurrencyRepositoryImpl()
+    private val rate = Rates
+    private val currencyRepository = CurrencyRepositoryImpl(rate)
     private val enterAmountUseCase = EnterAmountUseCase()
     private val selectCurrencyUseCase =
         SelectCurrencyUseCase(currencyRepository = currencyRepository)
@@ -24,6 +28,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val activityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        // размер по умолчанию
+        val memory = activityManager.memoryClass
 
         val buttonDin = findViewById<Button>(R.id.buttonDin)
         val buttonRub = findViewById<Button>(R.id.buttonRub)
@@ -41,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         val button8 = findViewById<Button>(R.id.button8)
         val button9 = findViewById<Button>(R.id.button9)
         val button0 = findViewById<Button>(R.id.button0)
+        val buttonDot = findViewById<Button>(R.id.buttonDot)
         val buttonBack = findViewById<Button>(R.id.buttonBack)
         val buttonDel = findViewById<Button>(R.id.buttonDel)
         buttonBack.tag = 1
@@ -195,6 +204,12 @@ class MainActivity : AppCompatActivity() {
             vibrate()
             dataEditView.text =
                 enterAmountUseCase.execute(button = button0, dataEditView = dataEditView)
+        }
+        buttonDot.setOnClickListener {
+            vibrate()
+            dataEditView.text =
+                enterAmountUseCase.execute(button = buttonDot, dataEditView = dataEditView)
+            Toast.makeText(this, "Size of memory = $memory", Toast.LENGTH_SHORT).show()
         }
         buttonBack.setOnClickListener {
             vibrate()

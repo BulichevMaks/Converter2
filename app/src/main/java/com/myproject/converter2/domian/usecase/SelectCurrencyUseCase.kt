@@ -1,6 +1,7 @@
 package com.myproject.converter2.domian.usecase
 
 import android.graphics.Color
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.myproject.converter2.R
@@ -36,6 +37,7 @@ class SelectCurrencyUseCase(private val currencyRepository: CurrencyRepository) 
                 mapOfCurrencyTextView["textViewEur"]?.setTextColor(Color.WHITE)
 
                 val text = dataEditView.text.toString().toDouble()
+
                 mapOfCurrencyTextView["textViewDin"]?.text = format((text * currencyRepository.getRateRudDin()).toInt().toString())
                 mapOfCurrencyTextView["textViewRub"]?.text = format(text.toInt().toString())
                 mapOfCurrencyTextView["textViewLir"]?.text = format((text * currencyRepository.getRateRudLir()).toInt().toString())
@@ -78,10 +80,18 @@ class SelectCurrencyUseCase(private val currencyRepository: CurrencyRepository) 
                 mapOfCurrencyTextView["textViewEur"]?.setTextColor(Color.GREEN)
 
                 val text = dataEditView.text.toString().toDouble()
-                mapOfCurrencyTextView["textViewDin"]?.text = format((text * currencyRepository.getRateEurDin()).toInt().toString())
-                mapOfCurrencyTextView["textViewRub"]?.text = format((text * currencyRepository.getRateEurRub()).toInt().toString())
-                mapOfCurrencyTextView["textViewLir"]?.text = format((text * currencyRepository.getRateEurLir()).toInt().toString())
-                mapOfCurrencyTextView["textViewUsd"]?.text = format((text * currencyRepository.getRateEurUsd()).toInt().toString())
+                val one = currencyRepository.getRateEurDin()
+                Log.d("MY_LOG3", one.toString())
+                val tow = currencyRepository.getRateEurRub()
+                Log.d("MY_LOG3", tow.toString())
+                val tree = currencyRepository.getRateEurLir()
+                Log.d("MY_LOG3", tree.toString())
+                val fore = currencyRepository.getRateEurUsd()
+                Log.d("MY_LOG3", fore.toString())
+                mapOfCurrencyTextView["textViewDin"]?.text = format((text * one).toInt().toString())
+                mapOfCurrencyTextView["textViewRub"]?.text = format((text * tow).toInt().toString())
+                mapOfCurrencyTextView["textViewLir"]?.text = format((text * tree).toInt().toString())
+                mapOfCurrencyTextView["textViewUsd"]?.text = format((text * fore).toInt().toString())
                 mapOfCurrencyTextView["textViewEur"]?.text = format(text.toInt().toString())
 
             }

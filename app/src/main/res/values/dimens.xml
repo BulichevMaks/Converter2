@@ -2,5 +2,6 @@
     <dimen name="q" translatable="false">47dp</dimen>
     <dimen name="ql" translatable="false">23dp</dimen>
     <dimen name="qq" translatable="false">70dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

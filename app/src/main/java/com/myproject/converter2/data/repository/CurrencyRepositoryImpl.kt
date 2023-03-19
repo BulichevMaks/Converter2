@@ -1,85 +1,104 @@
 package com.myproject.converter2.data.repository
 
+import android.util.Log
+import android.view.View
+import android.widget.TextView
+import com.myproject.converter2.domian.models.Event
+import com.myproject.converter2.domian.models.RateResponse
+import com.myproject.converter2.domian.models.Rates
+import com.myproject.converter2.domian.repository.ApiLayerApi
 import com.myproject.converter2.domian.repository.CurrencyRepository
+import kotlinx.coroutines.*
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class CurrencyRepositoryImpl : CurrencyRepository {
+class CurrencyRepositoryImpl(private val rate: Rates) : CurrencyRepository {
+
+
+
     override fun getRateRudDin(): Double {
-        return 1.52
+        return rate.RudDin
     }
 
     override fun getRateRudLir(): Double {
-        return 0.26851
+        return rate.RudLir
     }
 
     override fun getRateRudUsd(): Double {
-        return 0.014277
+        return rate.RudUsd
     }
 
     override fun getRateRudEur(): Double {
-        return 0.012994
+
+        return rate.RudEur
     }
 
     override fun getRateDinRub(): Double {
-        return 0.65729
+        return rate.DinRub
     }
 
     override fun getRateDinLir(): Double {
-        return 0.17627
+        return rate.DinLir
     }
 
     override fun getRateDinUsd(): Double {
-        return 0.009374
+        return rate.DinUsd
     }
 
     override fun getRateDinEur(): Double {
-        return 0.008623
+        return rate.DinEur
     }
 
     override fun getRateLirRub(): Double {
-        return 3.72
+        return rate.LirRub
     }
 
     override fun getRateLirDin(): Double {
-        return 5.67
+        return rate.LirDin
     }
 
     override fun getRateLirUsd(): Double {
-        return 0.053145
+        return rate.LirUsd
     }
 
     override fun getRateLirEur(): Double {
-        return 0.048364
+        return rate.LirEur
     }
 
     override fun getRateUsdRub(): Double {
-        return 70.04
+        return rate.UsdRub
     }
 
     override fun getRateUsdDin(): Double {
-        return 106.68
+        return rate.UsdDin
     }
 
     override fun getRateUsdLir(): Double {
-        return 18.82
+        return rate.UsdLir
     }
 
     override fun getRateUsdEur(): Double {
-        return 0.91609
+        return rate.UsdEur
     }
 
     override fun getRateEurRub(): Double {
-        return 76.96
+        return rate.EurRub
     }
 
     override fun getRateEurDin(): Double {
-        return 115.97
+        return rate.EurDin
     }
 
     override fun getRateEurLir(): Double {
-        return 20.68
+        return rate.EurLir
     }
 
     override fun getRateEurUsd(): Double {
-        return 1.09
+        return rate.EurUsd
     }
 }

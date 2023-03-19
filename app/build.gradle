@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.myproject.converter2"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -30,25 +30,29 @@ android {
         jvmTarget = '1.8'
     }
     namespace 'com.myproject.converter2'
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.10'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
-    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.9.0'
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.5.0'
-    implementation group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '4.5.0'
-    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: '1.5.0', ext: 'pom'
-    runtimeOnly group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-android', version: '1.6.1'
-    runtimeOnly group: 'androidx.lifecycle', name: 'lifecycle-viewmodel', version: '2.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    implementation 'com.google.code.gson:gson:2.10'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '4.7.2'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.7.2'
 }

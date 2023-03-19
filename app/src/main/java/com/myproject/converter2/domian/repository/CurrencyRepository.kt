@@ -1,7 +1,7 @@
 package com.myproject.converter2.domian.repository
 
 interface CurrencyRepository {
-    fun getRateRudDin():Double
+     fun getRateRudDin():Double
     fun getRateRudLir():Double
     fun getRateRudUsd():Double
     fun getRateRudEur():Double
