@@ -32,7 +32,7 @@ object Rates {
 
 
     private const val apiLayerBaseUrl = "https://api.apilayer.com/"
-    private var token = "hoCJ8jVSxa1YjMwUjp0FEZHNtLXMSQ0P"
+    private var token = "hoCJ8jVSxa1fhgfhgfvnEZHNtLXMSQ0P"
 
     private val retrofit: Retrofit by lazy {
         val interceptor = HttpLoggingInterceptor()
