@@ -20,7 +20,7 @@ object Rates {
     val LirRub by lazy {runBlocking { search("RUB", "TRY") }}
     val LirDin by lazy {runBlocking { search("RSD", "TRY") }}
     val LirUsd by lazy {runBlocking { search("USD", "TRY") }}
-    val LirEur by lazy {runBlocking { search("RUB", "TRY") }}
+    val LirEur by lazy {runBlocking { search("EUR", "TRY") }}
     val UsdRub by lazy {runBlocking { search("RUB", "USD") }}
     val UsdDin by lazy {runBlocking { search("RSD", "USD") }}
     val UsdLir by lazy {runBlocking { search("TRY", "USD") }}
@@ -32,7 +32,7 @@ object Rates {
 
 
     private const val apiLayerBaseUrl = "https://api.apilayer.com/"
-    private var token = "hoCJhjkHJkhJKJhjKopkKtLXMSQ0P"
+    private var token = "hoCJ8jVSxa1YjMwUjp0FEZHNtLXMSQ0P"
 
     private val retrofit: Retrofit by lazy {
         val interceptor = HttpLoggingInterceptor()
